@@ -68,6 +68,6 @@ export default async(req: NextApiRequest, res: NextApiResponse) => {
     
   } else {
     res.setHeader('Allow', 'POST');
-    res.status(405).end('Method not aloweed')
+    res.status(405).end('Method not aloweed');
   }
 }
