@@ -42,6 +42,17 @@ export const getServerSideProps: GetServerSideProps = async ({
   const session = await getSession({ req });
   const { slug } = params;
 
+  //verificacao se ele nao tiver uma inscricao
+  // if (!session.activeSubscription) {
+  //   return {
+  //     redirect: {
+  //       destination: "/",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
+
+  console.log("SESSION", session);
   const prismic = getPrismicCLient(req);
   const response = await prismic.getByUID("publication", String(slug), {});
 
